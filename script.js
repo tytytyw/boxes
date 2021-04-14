@@ -42,4 +42,11 @@ function boxClick (e) {
     createDropMenu (e.target.className === "box" ? e.target : e.target.parentElement)
 }
 
+container.onclick = (e) => {
+    const oldDropMenu = document.querySelector('.drop-menu')
+    if (e.target.className === "container") {
+        if (oldDropMenu) oldDropMenu.remove()
+    }
+}
+
 createBox(14)
